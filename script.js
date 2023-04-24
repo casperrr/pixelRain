@@ -10,6 +10,7 @@ img.addEventListener("load",()=>{
     
     c.drawImage(img,0,0,canvas.width,canvas.height);
     const pixels = c.getImageData(0,0,canvas.width,canvas.height);
+    c.clearRect(0,0,canvas.width,canvas.height);
     
     let particlesArray = [];
     let partNum = 5000;
@@ -82,8 +83,10 @@ img.addEventListener("load",()=>{
         c.globalAlpha = 0.05;
         c.fillStyle = "rgb(0,0,0)";
         c.fillRect(0,0,canvas.width,canvas.height);
+        c.globalAlpha = 0.2;
         for(let i = 0; i < particlesArray.length; i++){
             particlesArray[i].update();
+            c.globalAlpha = particlesArray[i].speed * 0.5;
             particlesArray[i].draw();
 
         }
