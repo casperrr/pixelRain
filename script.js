@@ -1,5 +1,5 @@
 const img = new Image();
-img.src = "res/thomYorke.jpg";
+img.src = "res/2.png";
 
 
 img.addEventListener("load",()=>{
