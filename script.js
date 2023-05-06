@@ -26,6 +26,7 @@ img.addEventListener("load",()=>{
             const brightness = calculateRelativeBrightness(red,green,blue);
             const cell = [
                 cellBrightness = brightness,
+                cellColor = `rgb(${red},${green},${blue})`
             ];
             row.push(cell);
         }
@@ -67,7 +68,7 @@ img.addEventListener("load",()=>{
 
         draw(){
             c.beginPath();
-            c.fillStyle = "white";
+            c.fillStyle = mappedImage[this.pos1][this.pos2][1];
             c.arc(this.x,this.y,this.size,0,Math.PI * 2);
             c.fill();
         }
